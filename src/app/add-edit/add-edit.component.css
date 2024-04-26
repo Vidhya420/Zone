@@ -1,0 +1,53 @@
+.row{
+    display: flex;
+    gap: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-color: brown;
+ 
+}
+
+
+.mat-form-field{
+    width: 100%;
+    margin: 50%;
+}
+.top{
+    padding-top: 20px;
+  
+}
+
+.zone{
+    text-align: center;
+}
+
+.action{
+    padding: 0px 25px 20px;
+
+
+}
+
+.button{
+    flex: 1;
+}
+*{
+    color: black;
+    font-size: 16px;
+}
+.save,.save1{
+    background-color: #3699ff;
+    border: none;
+    color: white;
+    padding: 19px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.save{
+    float: right;
+}
+

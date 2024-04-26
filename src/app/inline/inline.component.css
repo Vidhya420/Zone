@@ -1,0 +1,28 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 239px;
+    background-color:#3f4254;
+    color: white;
+    height:635px;
+    font-size: 14px;
+  }
+  
+  .side{
+    position: absolute;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    padding: 19px 30px;
+    text-decoration: none;
+  }
+  
+  
+  
+  li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }

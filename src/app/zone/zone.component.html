@@ -1,0 +1,121 @@
+
+<div>
+<button class="add" (click)="openAddEditEmpForm()">Add Zone</button>
+
+
+<!-- <table class="table">
+    <thead>
+        <tr class="table">
+            <th>Action</th>
+            <th>Building Code</th>
+            <th>Zone Name</th>
+            <th>Zone Description</th>
+            <th>Zone Type</th>
+            <th>Zone Category</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    
+              <tbody  *ngFor="let post of posts" class="posting">            
+                <tr>
+                  <td>{{post}}</td>
+                  <td>{{post}}</td>
+                  <td>{{post}}</td>                
+                  <td>{{post}}</td>
+                  <td>{{post}}</td>
+                  <td>{{post}}</td>
+                  <td>{{post}}</td>
+                </tr>
+                <tr>
+                </table>
+
+                <style>
+                    table,th,td{
+                        border: 1px solid #d9d9d9;
+                        
+                        border-collapse: collapse;
+                        padding: 8px;
+                    }
+                </style>
+
+</div>
+ -->
+
+<div class="mainbody">
+
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+</div>    
+    
+   <div class="table">
+  
+    <div class="table2">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sticky> Plantcode </th>
+          <td mat-cell *matCellDef="let row"> {{row.firstName}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Buildingcode </th>
+          <td mat-cell *matCellDef="let row"> {{row.lastName}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> zonename </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="dob">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Zone Description </th>
+          <td mat-cell *matCellDef="let row"> {{row.dob}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Zone Type </th>
+          <td mat-cell *matCellDef="let row"> {{row.gender}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="education">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Zone Category </th>
+          <td mat-cell *matCellDef="let row"> {{row.education}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="company">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Zone status </th>
+          <td mat-cell *matCellDef="let row"> {{row.company}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="primary" (click)="openEditForm(row)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteEmployee(row.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
+          <td mat-cell *matCellDef="let row"> {{row.id.value}} </td>
+        </ng-container> 
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data available "{{input.value}}"</td>
+        </tr>
+      </table>
+    </div>
+    </div>
+   <div class="paginator">
+   
+      <mat-paginator [pageSizeOptions]="[5, 10, 50]" aria-label="Select page of users"></mat-paginator>
+  </div>       

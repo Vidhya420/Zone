@@ -1,0 +1,5 @@
+<h3 style="margin-left: 310px;" *ngIf="isVisible">Locations</h3>
+<div>
+<button class="location" *ngIf="isVisible" (click)="Show()">Zone</button>
+</div>
+<app-zone *ngIf=" !show"></app-zone>
